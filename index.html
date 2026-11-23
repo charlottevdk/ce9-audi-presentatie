@@ -936,6 +936,14 @@ section[data-title^="Vraag 5C"].active svg circle[fill="#E8B838"] { animation: m
 section[data-title^="Vraag 5C"] .paper-card { padding: 12px 16px !important; }
 section[data-title^="Vraag 5C"] svg { height: 384px !important; }
 section[data-title^="Vraag 7C"] .body-text.xs { font-size: 12.6px !important; }
+
+/* Slide 3 (Inleiding): de vier speerpunten bewegen ook los van elkaar */
+section[data-title^="Inleiding:"] .grid-4 > div { transition: transform .3s ease, box-shadow .3s ease !important; }
+section[data-title^="Inleiding:"] .grid-4 > div:hover { transform: translateY(-3px) !important; box-shadow: 0 10px 22px rgba(42,30,18,.18) !important; }
+section[data-title^="Inleiding:"].active .grid-4 > div:nth-child(1) { animation: muse-rise-l .45s cubic-bezier(.2,.7,.3,1) .15s both !important; }
+section[data-title^="Inleiding:"].active .grid-4 > div:nth-child(2) { animation: muse-pop-fwd .45s cubic-bezier(.2,.7,.3,1) .30s both !important; }
+section[data-title^="Inleiding:"].active .grid-4 > div:nth-child(3) { animation: muse-rise-r .45s cubic-bezier(.2,.7,.3,1) .45s both !important; }
+section[data-title^="Inleiding:"].active .grid-4 > div:nth-child(4) { animation: muse-rise .45s cubic-bezier(.2,.7,.3,1) .60s both !important; }
 </style>
 </head>
 <body class="sentence-case">

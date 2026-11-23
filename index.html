@@ -948,7 +948,7 @@ section[data-title^="Inleiding:"].active .grid-4 > div:nth-child(4) { animation:
 
 <style id="muse-alle-modellen">
 /* ===== Alle modellen: elementen bewegen afzonderlijk; het antwoord-element komt licht naar voren ===== */
-@keyframes muse-fwd-hold { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1.03); } }
+@keyframes muse-fwd-hold { from { opacity: 0; transform: scale(.95); } to { opacity: 1; transform: scale(1.05); } }
 @keyframes muse-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
 /* Naar voren halen bij aanwijzen (geldt voor alle behandelde model-elementen) */
@@ -1017,11 +1017,12 @@ section[data-title^="Vraag 7C"].active .diagram-cutout > div[style*="44px"] > di
 
 /* Slide 14 — Positioneringsdriehoek: hoekpunten poppen in, 3C-kaarten los */
 section[data-title^="Vraag 8: De positioneringsdriehoek"] svg circle { transform-box: fill-box; transform-origin: center; }
-section[data-title^="Vraag 8: De positioneringsdriehoek"].active svg circle { animation: muse-bol-pop .45s ease both !important; }
-section[data-title^="Vraag 8: De positioneringsdriehoek"].active svg circle:nth-of-type(1) { animation-delay: .20s !important; }
-section[data-title^="Vraag 8: De positioneringsdriehoek"].active svg circle:nth-of-type(2) { animation-delay: .34s !important; }
-section[data-title^="Vraag 8: De positioneringsdriehoek"].active svg circle:nth-of-type(3) { animation-delay: .48s !important; }
-section[data-title^="Vraag 8: De positioneringsdriehoek"].active svg circle:nth-of-type(4) { animation-delay: .62s !important; }
+section[data-title^="Vraag 8: De positioneringsdriehoek"].active svg circle:nth-of-type(1) { animation: muse-bol-fade .5s ease .15s both !important; }
+section[data-title^="Vraag 8: De positioneringsdriehoek"].active svg circle:nth-of-type(2) { animation: muse-bol-pop .55s ease .40s both !important; }
+section[data-title^="Vraag 8: De positioneringsdriehoek"].active svg circle:nth-of-type(3) { animation: muse-bol-pop .55s ease .62s both !important; }
+section[data-title^="Vraag 8: De positioneringsdriehoek"].active svg circle:nth-of-type(4) { animation: muse-bol-pop .55s ease .84s both !important; }
+section[data-title^="Vraag 8: De positioneringsdriehoek"] svg text:nth-of-type(2) { font-size: 15px !important; }
+section[data-title^="Vraag 8: De positioneringsdriehoek"] svg text:nth-of-type(3) { font-size: 8.6px !important; }
 section[data-title^="Vraag 8: De positioneringsdriehoek"].active .flex-col > .paper-card:nth-child(1) { animation: muse-rise-r .45s ease .25s both !important; }
 section[data-title^="Vraag 8: De positioneringsdriehoek"].active .flex-col > .paper-card:nth-child(2) { animation: muse-rise-r .45s ease .37s both !important; }
 section[data-title^="Vraag 8: De positioneringsdriehoek"].active .flex-col > .paper-card:nth-child(3) { animation: muse-rise-r .45s ease .49s both !important; }

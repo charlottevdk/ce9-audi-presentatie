@@ -820,7 +820,7 @@ body.sentence-case .body-text.lg { font-size: 18.2px !important; }
   transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease !important;
 }
 .paper-card:hover, .diagram-cutout:hover {
-  transform: translateY(-5px) rotate(-.35deg) !important;
+  transform: translateY(-3px) !important;
   box-shadow: 0 16px 34px rgba(42,30,18,.28) !important;
 }
 .conclusion-strip:hover { transform: translateY(-3px) !important; }
@@ -833,11 +833,27 @@ body.sentence-case .body-text.lg { font-size: 18.2px !important; }
 
 /* ===== Beweging: slides komen zacht in beeld ===== */
 @keyframes muse-rise {
-  from { opacity: 0; transform: translateY(18px); }
+  from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+@keyframes muse-rise-l {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes muse-rise-r {
+  from { opacity: 0; transform: translateX(12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes muse-fwd {
+  from { opacity: 0; transform: scale(.985); }
+  to   { opacity: 1; transform: scale(1); }
+}
+/* Afwisseling per slide-achtergrond: soms van links, soms naar voren */
+section.bg-kraft.active .slide-body > * { animation-name: muse-rise-l !important; }
+section.bg-grid.active .slide-body > * { animation-name: muse-rise-r !important; }
+section.bg-notebook.active .slide-body > * { animation-name: muse-fwd !important; }
 .slide.active .slide-header, .slide.active .title-block { animation: muse-rise .5s cubic-bezier(.2,.7,.3,1) both !important; }
-.slide.active .slide-body > * { animation: muse-rise .55s cubic-bezier(.2,.7,.3,1) both !important; }
+.slide.active .slide-body > * { animation: muse-rise .45s cubic-bezier(.2,.7,.3,1) both !important; }
 .slide.active .slide-body > *:nth-child(1) { animation-delay: .04s !important; }
 .slide.active .slide-body > *:nth-child(2) { animation-delay: .10s !important; }
 .slide.active .slide-body > *:nth-child(3) { animation-delay: .16s !important; }
@@ -850,6 +866,76 @@ body.sentence-case .body-text.lg { font-size: 18.2px !important; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+</style>
+
+<style id="muse-merkniveaus-animatie">
+/* ===== Vraag 3: elk merkniveau krijgt zijn eigen beweging =====
+   De trap bouwt zich niveau voor niveau op zodra de slide actief wordt. */
+@keyframes muse-vl-links  { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes muse-vl-rechts { from { opacity: 0; transform: translateX(16px); }  to { opacity: 1; transform: translateX(0); } }
+@keyframes muse-vl-onder  { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes muse-vl-boven  { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: translateY(0); } }
+
+section[data-title^="Vraag 3:"] .diagram-cutout > div[style*="flex-direction:column"] > div {
+  transition: transform .3s ease, box-shadow .3s ease !important;
+  border-radius: 4px;
+}
+section[data-title^="Vraag 3:"] .diagram-cutout > div[style*="flex-direction:column"] > div:hover {
+  transform: translateX(7px) scale(1.012) !important;
+}
+/* Niveau 1 — Ondernemingsmerk: schuift van links binnen */
+.slide.active section[data-title^="Vraag 3:"] .diagram-cutout > div[style*="flex-direction:column"] > div:nth-child(1),
+section[data-title^="Vraag 3:"].active .diagram-cutout > div[style*="flex-direction:column"] > div:nth-child(1) {
+  animation: muse-vl-links .6s cubic-bezier(.2,.7,.3,1) .15s both !important;
+}
+/* Niveau 2 — Familiemerk: schuift van rechts binnen */
+section[data-title^="Vraag 3:"].active .diagram-cutout > div[style*="flex-direction:column"] > div:nth-child(2) {
+  animation: muse-vl-rechts .6s cubic-bezier(.2,.7,.3,1) .38s both !important;
+}
+/* Niveau 3 — Individueel merk: stijgt van onderen op */
+section[data-title^="Vraag 3:"].active .diagram-cutout > div[style*="flex-direction:column"] > div:nth-child(3) {
+  animation: muse-vl-onder .6s cubic-bezier(.2,.7,.3,1) .61s both !important;
+}
+/* Niveau 4 — Type/variëteit: valt van boven in met een zachte stuiter */
+section[data-title^="Vraag 3:"].active .diagram-cutout > div[style*="flex-direction:column"] > div:nth-child(4) {
+  animation: muse-vl-boven .55s cubic-bezier(.25,.9,.35,1.12) .84s both !important;
+}
+</style>
+
+<style id="muse-structuren-kompas-fix">
+/* ===== Vraag 4: elk van de vier merkstructuren beweegt afzonderlijk (subtiel) ===== */
+@keyframes muse-pop-fwd { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: scale(1); } }
+section[data-title^="Vraag 4:"] .grid-4 > div { transition: transform .3s ease, box-shadow .3s ease !important; }
+section[data-title^="Vraag 4:"] .grid-4 > div:hover { transform: translateY(-3px) !important; box-shadow: 0 10px 22px rgba(42,30,18,.20) !important; }
+section[data-title^="Vraag 4:"].active .grid-4 > div:nth-child(1) { animation: muse-rise-l .45s cubic-bezier(.2,.7,.3,1) .15s both !important; }
+section[data-title^="Vraag 4:"].active .grid-4 > div:nth-child(2) { animation: muse-pop-fwd .45s cubic-bezier(.2,.7,.3,1) .30s both !important; }
+section[data-title^="Vraag 4:"].active .grid-4 > div:nth-child(3) { animation: muse-rise-r .45s cubic-bezier(.2,.7,.3,1) .45s both !important; }
+section[data-title^="Vraag 4:"].active .grid-4 > div:nth-child(4) { animation: muse-rise .45s cubic-bezier(.2,.7,.3,1) .60s both !important; }
+
+/* ===== Vraag 5C: de bolletjes van het Value Compass bewegen afzonderlijk ===== */
+section[data-title^="Vraag 5C"] svg circle { transform-box: fill-box; transform-origin: center; }
+@keyframes muse-bol-pop { 0% { opacity: 0; transform: scale(.3); } 70% { opacity: 1; transform: scale(1.12); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes muse-bol-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes muse-bol-puls { from { transform: scale(1); } to { transform: scale(1.16); } }
+/* Groene Audi-cluster: een voor een inpoppen */
+section[data-title^="Vraag 5C"].active svg circle[fill="#2CA048"] { animation: muse-bol-pop .45s cubic-bezier(.2,.7,.3,1) both !important; }
+section[data-title^="Vraag 5C"].active svg circle:nth-of-type(2)  { animation-delay: .20s !important; }
+section[data-title^="Vraag 5C"].active svg circle:nth-of-type(3)  { animation-delay: .34s !important; }
+section[data-title^="Vraag 5C"].active svg circle:nth-of-type(4)  { animation-delay: .48s !important; }
+section[data-title^="Vraag 5C"].active svg circle:nth-of-type(5)  { animation-delay: .62s !important; }
+section[data-title^="Vraag 5C"].active svg circle:nth-of-type(12) { animation-delay: .76s !important; }
+/* Grijze waarden: zacht erna in beeld */
+section[data-title^="Vraag 5C"].active svg circle[fill="#D4DCE5"], section[data-title^="Vraag 5C"].active svg circle[fill="#C4D4E0"] { animation: muse-bol-fade .6s ease .95s both !important; }
+/* Het gele spanningsbolletje: popt als laatste in en blijft daarna zacht pulseren */
+section[data-title^="Vraag 5C"].active svg circle[fill="#E8B838"] { animation: muse-bol-pop .45s cubic-bezier(.2,.7,.3,1) 1.15s both, muse-bol-puls 1.6s ease-in-out 1.8s infinite alternate !important; }
+
+/* ===== Reparatie: conclusiebalken niet meer afgekapt (slides 10, 13, 21) ===== */
+.slide-body { gap: 9px !important; padding: 10px 42px 6px 42px !important; }
+.conclusion-strip { padding: 9px 14px !important; }
+.conclusion-strip .body-text { font-size: 14px !important; line-height: 1.42 !important; }
+section[data-title^="Vraag 5C"] .paper-card { padding: 12px 16px !important; }
+section[data-title^="Vraag 5C"] svg { height: 384px !important; }
+section[data-title^="Vraag 7C"] .body-text.xs { font-size: 12.6px !important; }
 </style>
 </head>
 <body class="sentence-case">

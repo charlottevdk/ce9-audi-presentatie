@@ -786,6 +786,69 @@
     }
   }
 </style>
+
+<style id="muse-groter-en-beweging">
+/* ===== Grotere, beter leesbare typografie (vult het beeld beter) ===== */
+.body-text { font-size: 15px !important; line-height: 1.48 !important; }
+.body-text.sm { font-size: 13.8px !important; }
+.body-text.xs { font-size: 13px !important; }
+.body-text.lg { font-size: 17.5px !important; }
+body.sentence-case .body-text { font-size: 15.8px !important; }
+body.sentence-case .body-text.sm { font-size: 14.4px !important; }
+body.sentence-case .body-text.xs { font-size: 13.6px !important; }
+body.sentence-case .body-text.lg { font-size: 18.2px !important; }
+.subhead { font-size: 18.5px !important; }
+.slide-title { font-size: 34px !important; }
+.kicker { font-size: 13px !important; }
+.header-tag { font-size: 13px !important; }
+.clean-table { font-size: 14.5px !important; }
+.clean-table th { font-size: 15px !important; }
+.diagram-label { font-size: 14px !important; }
+.conclusion-badge { font-size: 13.5px !important; }
+.conclusion-strip .body-text { font-size: 14.5px !important; }
+.sticker { font-size: 12.5px !important; }
+.presenter-badge { font-size: 13px !important; }
+.polaroid-caption { font-size: 19px !important; }
+.slide-footer, .footer-meta { font-size: 12.5px !important; }
+.paper-card, .diagram-cutout { padding: 15px 18px !important; }
+.conclusion-strip { padding: 11px 16px !important; }
+
+/* ===== Beweging: hover-effecten zoals op een website ===== */
+.paper-card, .diagram-cutout, .conclusion-strip {
+  transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease !important;
+}
+.paper-card:hover, .diagram-cutout:hover {
+  transform: translateY(-5px) rotate(-.35deg) !important;
+  box-shadow: 0 16px 34px rgba(42,30,18,.28) !important;
+}
+.conclusion-strip:hover { transform: translateY(-3px) !important; }
+.sticker { transition: transform .3s ease !important; }
+.sticker:hover { transform: scale(1.14) rotate(-4deg) !important; }
+.dot, .controls-bar button { transition: transform .25s ease, background-color .25s ease !important; }
+.dot:hover, .controls-bar button:hover { transform: scale(1.22) !important; }
+.tape { transition: transform .3s ease !important; }
+.paper-card:hover .tape, .diagram-cutout:hover .tape { transform: rotate(-3deg) scale(1.06) !important; }
+
+/* ===== Beweging: slides komen zacht in beeld ===== */
+@keyframes muse-rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.slide.active .slide-header, .slide.active .title-block { animation: muse-rise .5s cubic-bezier(.2,.7,.3,1) both !important; }
+.slide.active .slide-body > * { animation: muse-rise .55s cubic-bezier(.2,.7,.3,1) both !important; }
+.slide.active .slide-body > *:nth-child(1) { animation-delay: .04s !important; }
+.slide.active .slide-body > *:nth-child(2) { animation-delay: .10s !important; }
+.slide.active .slide-body > *:nth-child(3) { animation-delay: .16s !important; }
+.slide.active .slide-body > *:nth-child(4) { animation-delay: .22s !important; }
+.slide.active .slide-body > *:nth-child(5) { animation-delay: .28s !important; }
+.slide.active .slide-body > *:nth-child(6) { animation-delay: .34s !important; }
+.slide.active .slide-body > *:nth-child(7) { animation-delay: .40s !important; }
+.slide.active .slide-body > *:nth-child(8) { animation-delay: .46s !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+</style>
 </head>
 <body>
 

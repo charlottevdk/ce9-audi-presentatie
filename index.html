@@ -948,7 +948,7 @@ section[data-title^="Inleiding:"].active .grid-4 > div:nth-child(4) { animation:
 
 <style id="muse-alle-modellen">
 /* ===== Alle modellen: elementen bewegen afzonderlijk; het antwoord-element komt licht naar voren ===== */
-@keyframes muse-fwd-hold { from { opacity: 0; transform: scale(.95); } to { opacity: 1; transform: scale(1.05); } }
+@keyframes muse-fwd-hold { from { opacity: 0; transform: scale(.95) translateY(0); } to { opacity: 1; transform: scale(1.07) translateY(-4px); } }
 @keyframes muse-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
 /* Naar voren halen bij aanwijzen (geldt voor alle behandelde model-elementen) */
@@ -1071,7 +1071,7 @@ section[data-title^="Vraag 12: Cultuurdimensies"].active svg rect:nth-of-type(12
 /* Slide 20 — Internationale strategieën: Differentiatie (3) komt naar voren */
 section[data-title^="Vraag 12: De vier"].active .grid-4 > div:nth-child(1) { animation: muse-rise-l .45s ease .15s both !important; }
 section[data-title^="Vraag 12: De vier"].active .grid-4 > div:nth-child(2) { animation: muse-rise-r .45s ease .30s both !important; }
-section[data-title^="Vraag 12: De vier"].active .grid-4 > div:nth-child(3) { animation: muse-fwd-hold .55s ease .45s both !important; box-shadow: 0 14px 28px rgba(160,30,30,.25) !important; }
+section[data-title^="Vraag 12: De vier"].active .grid-4 > div:nth-child(3) { animation: muse-fwd-hold .55s ease .45s both !important; box-shadow: 0 18px 34px rgba(160,30,30,.30) !important; position: relative; z-index: 3; }
 section[data-title^="Vraag 12: De vier"].active .grid-4 > div:nth-child(4) { animation: muse-rise .45s ease .60s both !important; }
 
 /* Slide 21 — Afsluiting: conclusiekaarten een voor een */

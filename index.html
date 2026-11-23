@@ -945,6 +945,143 @@ section[data-title^="Inleiding:"].active .grid-4 > div:nth-child(2) { animation:
 section[data-title^="Inleiding:"].active .grid-4 > div:nth-child(3) { animation: muse-rise-r .45s cubic-bezier(.2,.7,.3,1) .45s both !important; }
 section[data-title^="Inleiding:"].active .grid-4 > div:nth-child(4) { animation: muse-rise .45s cubic-bezier(.2,.7,.3,1) .60s both !important; }
 </style>
+
+<style id="muse-alle-modellen">
+/* ===== Alle modellen: elementen bewegen afzonderlijk; het antwoord-element komt licht naar voren ===== */
+@keyframes muse-fwd-hold { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1.03); } }
+@keyframes muse-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* Naar voren halen bij aanwijzen (geldt voor alle behandelde model-elementen) */
+section[data-title^="Vraag 1: Vier"] .grid-4 > div, section[data-title^="Vraag 2:"] .grid-3 > div,
+section[data-title^="Vraag 7C"] .diagram-cutout > div[style*="44px"] > div, section[data-title^="Vraag 8: Het"] .grid-4 > div,
+section[data-title^="Vraag 9:"] .grid-5 > div, section[data-title^="Vraag 10:"] .diagram-cutout > div[style*="104px"] > div,
+section[data-title^="Vraag 12: De vier"] .grid-4 > div, section[data-title^="Afsluiting:"] .grid-3 > div {
+  transition: transform .3s ease, box-shadow .3s ease !important;
+}
+section[data-title^="Vraag 1: Vier"] .grid-4 > div:hover, section[data-title^="Vraag 2:"] .grid-3 > div:hover,
+section[data-title^="Vraag 7C"] .diagram-cutout > div[style*="44px"] > div:hover, section[data-title^="Vraag 8: Het"] .grid-4 > div:hover,
+section[data-title^="Vraag 9:"] .grid-5 > div:hover, section[data-title^="Vraag 10:"] .diagram-cutout > div[style*="104px"] > div:hover,
+section[data-title^="Vraag 12: De vier"] .grid-4 > div:hover, section[data-title^="Afsluiting:"] .grid-3 > div:hover {
+  transform: translateY(-2px) scale(1.02) !important; box-shadow: 0 12px 24px rgba(42,30,18,.22) !important; position: relative; z-index: 3;
+}
+
+/* Slide 4 — Tabel 5.1: rijen een voor een, panelen eronder los */
+section[data-title^="Vraag 1: Segmentatie"].active .clean-table tbody tr { animation: muse-bol-fade .5s ease both !important; }
+section[data-title^="Vraag 1: Segmentatie"].active .clean-table tbody tr:nth-child(1) { animation-delay: .15s !important; }
+section[data-title^="Vraag 1: Segmentatie"].active .clean-table tbody tr:nth-child(2) { animation-delay: .23s !important; }
+section[data-title^="Vraag 1: Segmentatie"].active .clean-table tbody tr:nth-child(3) { animation-delay: .31s !important; }
+section[data-title^="Vraag 1: Segmentatie"].active .clean-table tbody tr:nth-child(4) { animation-delay: .39s !important; }
+section[data-title^="Vraag 1: Segmentatie"].active .clean-table tbody tr:nth-child(5) { animation-delay: .47s !important; }
+section[data-title^="Vraag 1: Segmentatie"].active .clean-table tbody tr:nth-child(6) { animation-delay: .55s !important; }
+section[data-title^="Vraag 1: Segmentatie"].active .diagram-cutout > div[style*="1fr 2fr"] > div:nth-child(1) { animation: muse-rise-l .45s ease .6s both !important; }
+section[data-title^="Vraag 1: Segmentatie"].active .diagram-cutout > div[style*="1fr 2fr"] > div:nth-child(2) { animation: muse-rise-r .45s ease .6s both !important; }
+
+/* Slide 5 — Benefitsegmenten: vier kaarten los, twee panelen los */
+section[data-title^="Vraag 1: Vier"].active .grid-4 > div:nth-child(1) { animation: muse-rise-l .45s ease .15s both !important; }
+section[data-title^="Vraag 1: Vier"].active .grid-4 > div:nth-child(2) { animation: muse-pop-fwd .45s ease .27s both !important; }
+section[data-title^="Vraag 1: Vier"].active .grid-4 > div:nth-child(3) { animation: muse-rise-r .45s ease .39s both !important; }
+section[data-title^="Vraag 1: Vier"].active .grid-4 > div:nth-child(4) { animation: muse-rise .45s ease .51s both !important; }
+section[data-title^="Vraag 1: Vier"].active .grid-2 > .paper-card:nth-child(1) { animation: muse-rise-l .45s ease .62s both !important; }
+section[data-title^="Vraag 1: Vier"].active .grid-2 > .paper-card:nth-child(2) { animation: muse-rise-r .45s ease .62s both !important; }
+
+/* Slide 6 — Segmentatiestrategieën: Audi-blok (2) komt naar voren */
+section[data-title^="Vraag 2:"].active .grid-3 > div:nth-child(1) { animation: muse-rise-l .45s ease .15s both !important; }
+section[data-title^="Vraag 2:"].active .grid-3 > div:nth-child(2) { animation: muse-fwd-hold .5s ease .30s both !important; box-shadow: 0 14px 28px rgba(160,30,30,.25) !important; }
+section[data-title^="Vraag 2:"].active .grid-3 > div:nth-child(3) { animation: muse-rise-r .45s ease .45s both !important; }
+
+/* Slide 9 — Middel-doelketen: vier treden los */
+section[data-title^="Vraag 5A"].active .diagram-cutout > div[style*="flex-direction:column"] > div:nth-child(1) { animation: muse-rise-l .45s ease .15s both !important; }
+section[data-title^="Vraag 5A"].active .diagram-cutout > div[style*="flex-direction:column"] > div:nth-child(2) { animation: muse-rise-r .45s ease .30s both !important; }
+section[data-title^="Vraag 5A"].active .diagram-cutout > div[style*="flex-direction:column"] > div:nth-child(3) { animation: muse-rise-l .45s ease .45s both !important; }
+section[data-title^="Vraag 5A"].active .diagram-cutout > div[style*="flex-direction:column"] > div:nth-child(4) { animation: muse-rise-r .45s ease .60s both !important; }
+
+/* Slide 11 — Aaker: vijf rijen los en de balken groeien */
+section[data-title^="Vraag 6:"].active .diagram-cutout > div[style*="flex-direction:column"] > div { animation: muse-bol-fade .5s ease both !important; }
+section[data-title^="Vraag 6:"].active .diagram-cutout > div[style*="flex-direction:column"] > div:nth-child(1) { animation-delay: .14s !important; }
+section[data-title^="Vraag 6:"].active .diagram-cutout > div[style*="flex-direction:column"] > div:nth-child(2) { animation-delay: .26s !important; }
+section[data-title^="Vraag 6:"].active .diagram-cutout > div[style*="flex-direction:column"] > div:nth-child(3) { animation-delay: .38s !important; }
+section[data-title^="Vraag 6:"].active .diagram-cutout > div[style*="flex-direction:column"] > div:nth-child(4) { animation-delay: .50s !important; }
+section[data-title^="Vraag 6:"].active .diagram-cutout > div[style*="flex-direction:column"] > div:nth-child(5) { animation-delay: .62s !important; }
+section[data-title^="Vraag 6:"] .diagram-cutout > div[style*="flex-direction:column"] > div > div:nth-child(2) > div { transform-origin: left center !important; }
+section[data-title^="Vraag 6:"].active .diagram-cutout > div[style*="flex-direction:column"] > div > div:nth-child(2) > div { animation: muse-bar .7s cubic-bezier(.2,.7,.3,1) .45s both !important; }
+
+/* Slide 12 — Commercials: informationeel van links, transformationeel van rechts */
+section[data-title^="Vraag 7A"].active .paper-card.teal-accent { animation: muse-rise-l .5s ease .20s both !important; }
+section[data-title^="Vraag 7A"].active .paper-card.red-accent { animation: muse-rise-r .5s ease .35s both !important; }
+
+/* Slide 13 — Rossiter-Percy: vier cellen los; de auto-cel (rood, 6) komt naar voren */
+section[data-title^="Vraag 7C"].active .diagram-cutout > div[style*="44px"] > div:nth-child(5) { animation: muse-rise-l .45s ease .20s both !important; }
+section[data-title^="Vraag 7C"].active .diagram-cutout > div[style*="44px"] > div:nth-child(6) { animation: muse-fwd-hold .55s ease .35s both !important; box-shadow: 0 16px 32px rgba(160,30,30,.28) !important; position: relative; z-index: 2; }
+section[data-title^="Vraag 7C"].active .diagram-cutout > div[style*="44px"] > div:nth-child(8) { animation: muse-rise-r .45s ease .50s both !important; }
+section[data-title^="Vraag 7C"].active .diagram-cutout > div[style*="44px"] > div:nth-child(9) { animation: muse-rise .45s ease .65s both !important; }
+
+/* Slide 14 — Positioneringsdriehoek: hoekpunten poppen in, 3C-kaarten los */
+section[data-title^="Vraag 8: De positioneringsdriehoek"] svg circle { transform-box: fill-box; transform-origin: center; }
+section[data-title^="Vraag 8: De positioneringsdriehoek"].active svg circle { animation: muse-bol-pop .45s ease both !important; }
+section[data-title^="Vraag 8: De positioneringsdriehoek"].active svg circle:nth-of-type(1) { animation-delay: .20s !important; }
+section[data-title^="Vraag 8: De positioneringsdriehoek"].active svg circle:nth-of-type(2) { animation-delay: .34s !important; }
+section[data-title^="Vraag 8: De positioneringsdriehoek"].active svg circle:nth-of-type(3) { animation-delay: .48s !important; }
+section[data-title^="Vraag 8: De positioneringsdriehoek"].active svg circle:nth-of-type(4) { animation-delay: .62s !important; }
+section[data-title^="Vraag 8: De positioneringsdriehoek"].active .flex-col > .paper-card:nth-child(1) { animation: muse-rise-r .45s ease .25s both !important; }
+section[data-title^="Vraag 8: De positioneringsdriehoek"].active .flex-col > .paper-card:nth-child(2) { animation: muse-rise-r .45s ease .37s both !important; }
+section[data-title^="Vraag 8: De positioneringsdriehoek"].active .flex-col > .paper-card:nth-child(3) { animation: muse-rise-r .45s ease .49s both !important; }
+section[data-title^="Vraag 8: De positioneringsdriehoek"].active .flex-col > .paper-card:nth-child(4) { animation: muse-rise-r .45s ease .61s both !important; }
+
+/* Slide 15 — Statement naar voren, vier merkwetten los */
+section[data-title^="Vraag 8: Het positioneringsstatement"].active .torn-panel { animation: muse-pop-fwd .5s ease .15s both !important; }
+section[data-title^="Vraag 8: Het positioneringsstatement"].active .grid-4 > div:nth-child(1) { animation: muse-rise-l .45s ease .35s both !important; }
+section[data-title^="Vraag 8: Het positioneringsstatement"].active .grid-4 > div:nth-child(2) { animation: muse-pop-fwd .45s ease .47s both !important; }
+section[data-title^="Vraag 8: Het positioneringsstatement"].active .grid-4 > div:nth-child(3) { animation: muse-rise-r .45s ease .59s both !important; }
+section[data-title^="Vraag 8: Het positioneringsstatement"].active .grid-4 > div:nth-child(4) { animation: muse-rise .45s ease .71s both !important; }
+
+/* Slide 16 — Kennisdeling: vijf stappen los */
+section[data-title^="Vraag 9:"].active .grid-5 > div:nth-child(1) { animation: muse-rise-l .45s ease .14s both !important; }
+section[data-title^="Vraag 9:"].active .grid-5 > div:nth-child(2) { animation: muse-pop-fwd .45s ease .27s both !important; }
+section[data-title^="Vraag 9:"].active .grid-5 > div:nth-child(3) { animation: muse-rise-r .45s ease .40s both !important; }
+section[data-title^="Vraag 9:"].active .grid-5 > div:nth-child(4) { animation: muse-rise .45s ease .53s both !important; }
+section[data-title^="Vraag 9:"].active .grid-5 > div:nth-child(5) { animation: muse-pop-fwd .45s ease .66s both !important; }
+
+/* Slide 17 — Figuur 1 artikel: Corporate Venturing (groen, 5) komt naar voren, rest los */
+section[data-title^="Vraag 10:"].active .diagram-cutout > div[style*="104px"] > div:nth-child(5) { animation: muse-fwd-hold .55s ease .20s both !important; box-shadow: 0 16px 32px rgba(30,110,50,.30) !important; position: relative; z-index: 2; }
+section[data-title^="Vraag 10:"].active .diagram-cutout > div[style*="104px"] > div:nth-child(6) { animation: muse-rise-r .45s ease .35s both !important; }
+section[data-title^="Vraag 10:"].active .diagram-cutout > div[style*="104px"] > div:nth-child(8) { animation: muse-rise-l .45s ease .50s both !important; }
+section[data-title^="Vraag 10:"].active .diagram-cutout > div[style*="104px"] > div:nth-child(9) { animation: muse-rise .45s ease .65s both !important; }
+
+/* Slide 18 — Extensies: merkextensie van links, lijnextensie van rechts */
+section[data-title^="Vraag 11"].active .grid-2 > div:nth-child(1) { animation: muse-rise-l .45s ease .20s both !important; }
+section[data-title^="Vraag 11"].active .grid-2 > div:nth-child(2) { animation: muse-rise-r .45s ease .35s both !important; }
+
+/* Slide 19 — Hofstede: de staven groeien een voor een */
+section[data-title^="Vraag 12: Cultuurdimensies"] svg rect { transform-box: fill-box; transform-origin: left center; }
+section[data-title^="Vraag 12: Cultuurdimensies"].active svg rect { animation: muse-bar .55s cubic-bezier(.2,.7,.3,1) both !important; }
+section[data-title^="Vraag 12: Cultuurdimensies"].active svg rect:nth-of-type(1) { animation-delay: .12s !important; }
+section[data-title^="Vraag 12: Cultuurdimensies"].active svg rect:nth-of-type(2) { animation-delay: .18s !important; }
+section[data-title^="Vraag 12: Cultuurdimensies"].active svg rect:nth-of-type(3) { animation-delay: .24s !important; }
+section[data-title^="Vraag 12: Cultuurdimensies"].active svg rect:nth-of-type(4) { animation-delay: .30s !important; }
+section[data-title^="Vraag 12: Cultuurdimensies"].active svg rect:nth-of-type(5) { animation-delay: .36s !important; }
+section[data-title^="Vraag 12: Cultuurdimensies"].active svg rect:nth-of-type(6) { animation-delay: .42s !important; }
+section[data-title^="Vraag 12: Cultuurdimensies"].active svg rect:nth-of-type(7) { animation-delay: .48s !important; }
+section[data-title^="Vraag 12: Cultuurdimensies"].active svg rect:nth-of-type(8) { animation-delay: .54s !important; }
+section[data-title^="Vraag 12: Cultuurdimensies"].active svg rect:nth-of-type(9) { animation-delay: .60s !important; }
+section[data-title^="Vraag 12: Cultuurdimensies"].active svg rect:nth-of-type(10) { animation-delay: .66s !important; }
+section[data-title^="Vraag 12: Cultuurdimensies"].active svg rect:nth-of-type(11) { animation-delay: .72s !important; }
+section[data-title^="Vraag 12: Cultuurdimensies"].active svg rect:nth-of-type(12) { animation-delay: .78s !important; }
+
+/* Slide 20 — Internationale strategieën: Differentiatie (3) komt naar voren */
+section[data-title^="Vraag 12: De vier"].active .grid-4 > div:nth-child(1) { animation: muse-rise-l .45s ease .15s both !important; }
+section[data-title^="Vraag 12: De vier"].active .grid-4 > div:nth-child(2) { animation: muse-rise-r .45s ease .30s both !important; }
+section[data-title^="Vraag 12: De vier"].active .grid-4 > div:nth-child(3) { animation: muse-fwd-hold .55s ease .45s both !important; box-shadow: 0 14px 28px rgba(160,30,30,.25) !important; }
+section[data-title^="Vraag 12: De vier"].active .grid-4 > div:nth-child(4) { animation: muse-rise .45s ease .60s both !important; }
+
+/* Slide 21 — Afsluiting: conclusiekaarten een voor een */
+section[data-title^="Afsluiting:"].active .grid-3 > .paper-card { animation: muse-bol-fade .5s ease both !important; }
+section[data-title^="Afsluiting:"].active .grid-3 > .paper-card:nth-child(1) { animation-delay: .12s !important; }
+section[data-title^="Afsluiting:"].active .grid-3 > .paper-card:nth-child(2) { animation-delay: .21s !important; }
+section[data-title^="Afsluiting:"].active .grid-3 > .paper-card:nth-child(3) { animation-delay: .30s !important; }
+section[data-title^="Afsluiting:"].active .grid-3 > .paper-card:nth-child(4) { animation-delay: .39s !important; }
+section[data-title^="Afsluiting:"].active .grid-3 > .paper-card:nth-child(5) { animation-delay: .48s !important; }
+section[data-title^="Afsluiting:"].active .grid-3 > .paper-card:nth-child(6) { animation-delay: .57s !important; }
+</style>
 </head>
 <body class="sentence-case">
 

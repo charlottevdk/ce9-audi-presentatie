@@ -1094,6 +1094,18 @@ section[data-title^="Vraag 9:"] .grid-5 .sticker { font-size: 13px !important; }
 section[data-title^="Vraag 9:"] .conclusion-strip { padding: 7px 12px !important; }
 section[data-title^="Vraag 9:"] .conclusion-strip .body-text { font-size: 13.5px !important; line-height: 1.4 !important; }
 </style>
+
+<style id="muse-slide19-staven-hover">
+/* Slide 19 (Hofstede): elke staaf beweegt individueel bij hover; het paneel eromheen blijft stil */
+section[data-title^="Vraag 12: Cultuurdimensies"] .paper-card:has(svg):hover,
+section[data-title^="Vraag 12: Cultuurdimensies"] .diagram-cutout:has(svg):hover { transform: none !important; }
+section[data-title^="Vraag 12: Cultuurdimensies"] svg rect { transform-box: fill-box; transform-origin: 50% 100%; transition: scale .25s ease, filter .25s ease; cursor: pointer; }
+section[data-title^="Vraag 12: Cultuurdimensies"] svg rect:hover { scale: 1.14 1.05; filter: brightness(1.14); }
+@media (prefers-reduced-motion: reduce) {
+  section[data-title^="Vraag 12: Cultuurdimensies"] svg rect { transition: none; }
+  section[data-title^="Vraag 12: Cultuurdimensies"] svg rect:hover { scale: none; filter: none; }
+}
+</style>
 </head>
 <body class="sentence-case">
 
